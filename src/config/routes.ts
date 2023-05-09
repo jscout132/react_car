@@ -2,7 +2,6 @@ import Home from "../pages/Home";
 import Cars from "../pages/Cars";
 import Sales from "../pages/Sales";
 import Parts from "../pages/Parts";
-import { Component } from "react";
 
 // interface is typescript specific
 interface RouteTypes {

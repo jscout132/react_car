@@ -1,7 +1,8 @@
 // NOT CURRENTLY USING THIS PAGE
 import Button from "./Button";
 
-
+// map through the cars in the database the same way you 
+// mapped through the nav links?
 
 interface CarProps{
     className?:string,
