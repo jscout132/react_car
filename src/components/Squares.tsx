@@ -1,3 +1,5 @@
+import { server_calls } from "../api/server";
+
 interface SquaresProps{
     children: React.ReactNode;
     className?: string;

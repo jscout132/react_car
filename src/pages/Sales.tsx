@@ -1,9 +1,11 @@
-
+import SaleDisplay from "../components/SaleDisplay";
 
 const Sales = () => {
   return (
     <div>
-      sales 
+       <SaleDisplay>
+        first name last name
+       </SaleDisplay>
     </div>
   );
 }

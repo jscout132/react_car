@@ -26,8 +26,8 @@ function Home() {
         </SideBars>
         <section className="h-8"></section>
         <SideBars>
-            <p><i className="fa-solid fa-handshake fa-2xl pr-5" style={{color: "#eab308"}}></i>
-            Chat with a salesperson</p>
+        <Link to='/sales'><p><i className="fa-solid fa-handshake fa-2xl pr-5" style={{color: "#eab308"}}></i>
+            Chat with a salesperson</p></Link>
         </SideBars>
     </section>
     </div>
