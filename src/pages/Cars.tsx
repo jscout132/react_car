@@ -1,5 +1,5 @@
 import CarTable from "../components/CarTable";
-import ActionAreaCard from "../components/CarSquare";
+// import CarSquare from "../components/CarSquare";
 
 
 
@@ -11,7 +11,7 @@ const Cars = () => {
       <CarTable></CarTable>
     </div>
     <div className="flex flex-row mt-5">
-      <ActionAreaCard/>
+      {/* <CarSquare/> */}
 
     </div>
     </>

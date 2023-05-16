@@ -1,7 +1,7 @@
 import AddCarForm from "./AddCarForm";
 
 type Props = {
-    id?: string;
+    id?: string[];
     open: boolean;
     onClose?: () => void;
 }

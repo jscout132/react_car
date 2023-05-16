@@ -9,8 +9,7 @@ import { useForm } from "react-hook-form"
 import { useDispatch, useStore } from "react-redux"
 
 interface AddCarProps {
-    id?: string,
-    data?:{}
+    id?: string[] 
 }
 
 const AddCarForm = (props:AddCarProps) => {
@@ -19,10 +18,11 @@ const AddCarForm = (props:AddCarProps) => {
     const store = useStore();
 
     const onSubmit = (data:any, event: any) => {
-        console.log(`Serial Number: ${props.id}`);
-        if (props.id) {
-            server_calls.update(props.id!, data)
-            console.log(`Updated: ${ data } ${ props.id }`)
+        console.log(`Serial Number: ${typeof(props.id)}`);
+        console.log(data)
+        if (props.id && props.id.length > 0) {
+            server_calls.update(props.id[0], data)
+            console.log(`Updated: ${ data.id } ${ props.id }`)
             setTimeout(()=>{window.location.reload()}, 10000);
             event.target.reset()
         } else {
@@ -36,7 +36,7 @@ const AddCarForm = (props:AddCarProps) => {
             dispatch(chooseID(data.id));
 
             server_calls.create(store.getState())
-            setTimeout(()=>{window.location.reload()}, 1000);
+            setTimeout(()=>{window.location.reload()}, 10000);
         }
     }
 

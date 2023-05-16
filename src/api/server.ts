@@ -22,7 +22,8 @@ export const server_calls = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-access-token': `Bearer: ${token}`
+                'x-access-token': `Bearer: ${token}`,
+                'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(data)//read more about this
         });
@@ -33,12 +34,13 @@ export const server_calls = {
 
         return await response.json()
     },
-    update: async (id: string, data:any={}) => {
+    update: async (id:string, data:any={}) => {
         const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/cars/${id}`,{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-access-token': `Bearer: ${token}`
+                'x-access-token': `Bearer: ${token}`,
+                'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(data)
     });

@@ -7,7 +7,7 @@ import Module from "./Module";
 import { server_calls } from "../api/server";
 
 const columns: GridColDef[] = [
-    // { field: 'id', headerName: "ID", width: 90, hide: true },
+    { field: 'id', headerName: "ID", width: 90 },
     { field: 'car_make', headerName: "Car Make", flex: 1 },
     { field: 'car_model', headerName: "Car Model", flex: 1 },
     { field: 'car_color', headerName: "Car Color", flex: 1 },
@@ -21,7 +21,7 @@ function CarTable() {
 
     const {carData, getData } = useGetData();
 
-    const [selectionModel, setSelectionModel] = useState<any>([])
+    const [selectionModel, setSelectionModel] = useState<string[]>([])
 
     const handleOpen = () => {
         setOpen(true)
@@ -32,10 +32,10 @@ function CarTable() {
     }
 
     const deleteData = () => {
-        server_calls.delete(selectionModel)
+        server_calls.delete(selectionModel[0])
         getData();
         console.log(`Selection model: ${selectionModel}`)
-        setTimeout(()=>{ window.location.reload() }, 500)
+        setTimeout(()=>{ window.location.reload() }, 5000)
     }
 
   return (

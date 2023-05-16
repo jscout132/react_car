@@ -1,7 +1,6 @@
 import { Card } from "@mui/material";
 import { useState, useEffect } from "react";
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
@@ -18,7 +17,7 @@ interface Item {
     mileage:string,
 }
 
-function ActionAreaCard() {
+function CarSquare() {
     const [data, setData] = useState<Item[]>([]);
 
 
@@ -57,4 +56,4 @@ function ActionAreaCard() {
   );
 }
 
-export default ActionAreaCard
+export default CarSquare
