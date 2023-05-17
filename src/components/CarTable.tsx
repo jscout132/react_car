@@ -34,7 +34,7 @@ function CarTable() {
     const deleteData = () => {
         server_calls.delete(selectionModel[0])
         getData();
-        console.log(`Selection model: ${selectionModel}`)
+        console.log(`Selection model: ${selectionModel[0]}`)
         setTimeout(()=>{ window.location.reload() }, 5000)
     }
 
@@ -48,8 +48,11 @@ function CarTable() {
     {/* just displaying the cars on this page */}
         <div className="flex flex-row mt-5">
             <Button onClick={ () => handleOpen()}>Add Car</Button>
-            <Button onClick={handleOpen}>Update Car Info</Button>
+            <Button onClick={ () => handleOpen()}>Update Car Info</Button>
             <Button onClick={deleteData}>Delete Car</Button>    
+
+
+            <Button>show id</Button>
         </div>
          <div className={ open ? "hidden" : "container mx-10 my-5 flex flex-col"} 
             style={{height: 400, width:'100%'}}>

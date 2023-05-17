@@ -17,7 +17,8 @@ export const server_calls = {
         return await response.json()
     },
     create: async (data: any={}) => {
-        const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/cars`,
+        console.log('in server')
+        const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/car`,
         {
             method: 'POST',
             headers: {
@@ -35,23 +36,23 @@ export const server_calls = {
         return await response.json()
     },
     update: async (id:string, data:any={}) => {
-        const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/cars/${id}`,{
+        const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/car/${id}`,{
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
                 'x-access-token': `Bearer: ${token}`,
+                'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(data)
     });
         if (!response.ok){
-            throw new Error('Failed to update data on server')
+            throw new Error('Failed to update data on server in the update function')
         }
 
         return await response.json()
     },
     delete: async (id: string) => {
-        const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/cars/${id}`,{
+        const response = await fetch(`https://feline-heliotrope-summer.glitch.me/api/car/${id}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
