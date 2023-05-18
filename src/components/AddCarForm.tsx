@@ -19,19 +19,17 @@ const AddCarForm = (props:AddCarProps) => {
 
     const onSubmit = (data:any, event: any) => {
         console.log(`Serial Number: ${typeof(props.id)}`);
-        console.log('props.id=',props.id)
+        console.log('props.id=',props.id)//still returning an empty id
         console.log('data.id=',data.id)
         if (props.id && props.id.length > 0) {
             //the if is used to update cars
-            console.log('in the if')
             server_calls.update(props.id[0], data)
             console.log(`Updated: ${ data.id } ${ props.id }`)
-            setTimeout(()=>{window.location.reload()}, 10000);
+            setTimeout(()=>{window.location.reload()}, 1000);
             event.target.reset()
         } else {
             //use dispatch to update state in store
             //the else is used to add cars
-            console.log('in the else')
             dispatch(chooseCarMake(data.car_make));
             dispatch(chooseCarModel(data.car_model));
             dispatch(chooseCarColor(data.car_color));
@@ -41,7 +39,7 @@ const AddCarForm = (props:AddCarProps) => {
             dispatch(chooseID(data.id));
 
             server_calls.create(store.getState())
-            setTimeout(()=>{window.location.reload()}, 10000);
+            setTimeout(()=>{window.location.reload()}, 1000);
         }
     }
 

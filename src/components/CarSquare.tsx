@@ -2,7 +2,6 @@ import { Card } from "@mui/material";
 import { useState, useEffect } from "react";
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 
 
 let token = 'a8abb8500756'
@@ -31,7 +30,7 @@ function CarSquare() {
             }
         })
           .then(response => response.json())
-          .then(data => setData(data));
+          .then(data => setData(data.slice(-5,-1)));
       }, []);
     
   return (
@@ -40,16 +39,17 @@ function CarSquare() {
         <Card key={item.id} 
         className="px-3 m-5 bg-gray-200 shadow-md border-l-8 transition
                  border-gray-200 hover:border-yellow-500">
-            <CardActionArea>
                 <CardContent>
                 <Typography variant="h5" component="h5">
                 {item.car_make} {item.car_model}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography sx={{ mb: 1 }} color="text.secondary">
                 Color: {item.car_color}
                 </Typography>
+                <Typography sx={{ mb:0 }} color="text.secondary">
+                Price: {item.cost_}
+                </Typography>
                 </CardContent>
-            </CardActionArea>
         </Card>
       ))}
     </div>

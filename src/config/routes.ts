@@ -7,7 +7,8 @@ import Parts from "../pages/Parts";
 interface RouteTypes {
     path: string,
     component: ()=> JSX.Element,
-    name: string
+    name: string,
+    protected: boolean
 }
 
 const routes: RouteTypes[] = [
@@ -15,21 +16,25 @@ const routes: RouteTypes[] = [
         path: "",
         component: Home,
         name: "Home Screen",
+        protected: false
     },
     {
         path: "/cars",
         component: Cars,
-        name: "Cars"
+        name: "Cars",
+        protected: true
     },
     {
         path: "/sales",
         component: Sales,
-        name: "Sales"
+        name: "Sales",
+        protected: false
     },
     {
         path: "/parts",
         component: Parts,
-        name: "parts"
+        name: "Parts",
+        protected: false
     }
     ];
 

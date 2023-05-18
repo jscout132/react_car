@@ -47,21 +47,22 @@ function CarTable() {
         />
     {/* just displaying the cars on this page */}
         <div className="flex flex-row mt-5">
-            <Button onClick={ () => handleOpen()}>Add Car</Button>
+            <Button onClick={ handleOpen}>Add Car</Button>
             <Button onClick={ () => handleOpen()}>Update Car Info</Button>
             <Button onClick={deleteData}>Delete Car</Button>    
-
-
-            <Button>show id</Button>
         </div>
+        
          <div className={ open ? "hidden" : "container mx-10 my-5 flex flex-col"} 
             style={{height: 400, width:'100%'}}>
                 <h2 className="p-3 bg-gray-200">The Cars</h2>
-                <DataGrid rows={carData} columns={columns} pageSizeOptions={ [100] }
-                checkboxSelection={true} 
-                onSelectionModelChange={ (item:any) =>{
-                    setSelectionModel(item)
-                }}
+                <DataGrid 
+                    rows={carData} 
+                    columns={columns} 
+                    pageSizeOptions={ [100] }
+                    checkboxSelection={true} 
+                    onRowSelectionModelChange={ (id:any) => {
+                        setSelectionModel(id)
+                    }}
 
                 />
             

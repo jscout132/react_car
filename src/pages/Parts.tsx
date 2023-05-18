@@ -1,8 +1,11 @@
+import SideBars from "../components/SideBars";
 
 function Parts() {
   return (
     <div>
-      Auto Parts
+      <SideBars>
+        car parts
+      </SideBars>
     </div>
   );
 }
