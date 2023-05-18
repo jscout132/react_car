@@ -7,6 +7,7 @@ import CarTable from "../components/CarTable";
 const Cars = () => {
   return (
     <>
+    <div>Note: when updating car information, the ID number needs to stay the same because that was the primary key</div>
     <div>
       <CarTable></CarTable>
     </div>
